@@ -6,7 +6,10 @@ int main() {
 	sf::String title = "Arcanoid";
 	sf::RenderWindow window(windowSize,title);
 
-	Paddle paddle(100, sf::Vector2f(400, 300), "./textures/Paddle.png");
+	Paddle paddle(100, sf::Vector2f(400, 550), "./textures/Paddle.png");
+
+	sf::Clock clock;
+	sf::Time dt;
 
 	while (window.isOpen())
 	{
@@ -19,6 +22,9 @@ int main() {
 				window.close();
 			}
 		}
+		dt = clock.restart();
+		paddle.movePaddle();
+		paddle.updatePaddle(dt.asSeconds());
 		//clearing the screen
 		window.clear();
 		//drawing items

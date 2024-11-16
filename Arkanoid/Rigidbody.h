@@ -14,7 +14,7 @@ public:
 	void setObjectVelocity(sf::Vector2f);
 	sf::Vector2f getObjectVelocity();
 protected:
-	int objectSpeed;
+	float objectSpeed;
 	sf::Vector2f objectVelocity;
 	sf::Rect<float> objectBounds;
 	sf::Sprite objectSprite;

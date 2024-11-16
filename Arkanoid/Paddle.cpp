@@ -14,6 +14,27 @@ Paddle::Paddle(int paddleSpeed, sf::Vector2f paddlePosition, sf::String paddleTe
 	this->objectSprite.setPosition(paddlePosition);
 }
 
+void Paddle::movePaddle()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
+		this->objectVelocity.x = 1;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	{
+		this->objectVelocity.x = -1;
+	}
+	if (!sf::Keyboard::isKeyPressed(sf::Keyboard::A) && !sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		this->objectVelocity.x = 0;
+	}
+	
+
+}
+
+void Paddle::updatePaddle(float dt) {
+	this->setObjectPosition(sf::Vector2f(this->getObjectPosition().x + (this->objectSpeed * this->objectVelocity.x * dt), this->getObjectPosition().y));
+}
+
 void Paddle::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
 	target.draw(this->objectSprite, states);
