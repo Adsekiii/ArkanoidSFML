@@ -9,16 +9,14 @@ class Rigidbody: public sf::Drawable, public sf::Transformable{
 public:
 	Rigidbody();
 
-	void setPosition(sf::Vector2f);
-	sf::Vector2f getPosition();
-	void setVelocity(sf::Vector2f);
-	sf::Vector2f getVelocity();
+	void setObjectPosition(sf::Vector2f);
+	sf::Vector2f getObjectPosition();
+	void setObjectVelocity(sf::Vector2f);
+	sf::Vector2f getObjectVelocity();
 protected:
 	int objectSpeed;
-
 	sf::Vector2f objectVelocity;
-	sf::Vector2f objectPosition;
 	sf::Rect<float> objectBounds;
 	sf::Sprite objectSprite;
-	virtual void draw(sf::RenderTarget &target, sf::RenderStates &states) const;
+	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };

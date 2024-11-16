@@ -6,7 +6,7 @@ int main() {
 	sf::String title = "Arcanoid";
 	sf::RenderWindow window(windowSize,title);
 
-	Paddle paddle(100, sf::Vector2f(100, 100), "./textures/Paddle.png");
+	Paddle paddle(100, sf::Vector2f(400, 300), "./textures/Paddle.png");
 
 	while (window.isOpen())
 	{
@@ -22,7 +22,7 @@ int main() {
 		//clearing the screen
 		window.clear();
 		//drawing items
-
+		window.draw(paddle);
 		//displaying items
 		window.display();
 

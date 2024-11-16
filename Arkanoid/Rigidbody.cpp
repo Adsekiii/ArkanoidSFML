@@ -1,30 +1,25 @@
 #include "Rigidbody.h"
 
-void Rigidbody::draw(sf::RenderTarget& target, sf::RenderStates& states) const 
+void Rigidbody::draw(sf::RenderTarget& target, sf::RenderStates states) const 
 {
 	target.draw(this->objectSprite, states);
 }
-Rigidbody::Rigidbody() {
-	this->objectVelocity = sf::Vector2f(0.f, 0.f);
-	this->objectPosition = sf::Vector2f(0.f, 0.f);
-	this->objectBounds = this->objectSprite.getGlobalBounds();
-	this->objectSprite.setColor(sf::Color::White);
-}
+Rigidbody::Rigidbody() {}
 
 
-void Rigidbody::setPosition(sf::Vector2f newPosition) 
+void Rigidbody::setObjectPosition(sf::Vector2f newPosition)
 {
-	this->objectPosition = newPosition;
+	this->objectSprite.setPosition(newPosition);
 }
-sf::Vector2f Rigidbody::getPosition() 
+sf::Vector2f Rigidbody::getObjectPosition() 
 {
-	return this->objectPosition;
+	return this->objectSprite.getPosition();
 }
-void Rigidbody::setVelocity(sf::Vector2f newVelocity) 
+void Rigidbody::setObjectVelocity(sf::Vector2f newVelocity)
 {
 	this->objectVelocity = newVelocity;
 }
-sf::Vector2f Rigidbody::getVelocity() 
+sf::Vector2f Rigidbody::getObjectVelocity()
 {
 	return this->objectVelocity;
 }
