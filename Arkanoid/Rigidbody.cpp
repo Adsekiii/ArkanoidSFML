@@ -2,10 +2,9 @@
 
 void Rigidbody::draw(sf::RenderTarget& target, sf::RenderStates states) const 
 {
-	target.draw(this->objectSprite, states);
+	target.draw(this->objectSprite);
 }
 Rigidbody::Rigidbody() {}
-
 
 void Rigidbody::setObjectPosition(sf::Vector2f newPosition)
 {

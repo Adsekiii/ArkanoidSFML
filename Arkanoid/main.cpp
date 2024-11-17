@@ -5,8 +5,11 @@ int main() {
 	sf::VideoMode windowSize(800,600);
 	sf::String title = "Arcanoid";
 	sf::RenderWindow window(windowSize,title);
-
+	srand(time(NULL));
 	Paddle paddle(100, sf::Vector2f(400, 550), "./textures/Paddle.png");
+
+	std::vector<Brick*> bricks;
+	placeBricks(8, 4, &bricks, "./textures/Brick");
 
 	sf::Clock clock;
 	sf::Time dt;
@@ -23,11 +26,13 @@ int main() {
 			}
 		}
 		dt = clock.restart();
-		paddle.movePaddle();
 		paddle.updatePaddle(dt.asSeconds());
 		//clearing the screen
 		window.clear();
 		//drawing items
+		for (int i = 0; i <= bricks.size() - 1; i++) {
+			window.draw(*(bricks.at(i)));
+		}
 		window.draw(paddle);
 		//displaying items
 		window.display();
@@ -35,6 +40,16 @@ int main() {
 	}
 	
 	return EXIT_SUCCESS;
+}
+
+
+void placeBricks(int columns, int rows, std::vector<Brick*> *bricks, sf::String brickTexture) {
+	for (int i = 0; i < columns; i++) {
+		for (int j = 0; j < rows; j++) {
+			sf::String randomTexture = brickTexture + std::to_string(rand() % 4 + 1) + ".png";
+			bricks->push_back(new Brick(sf::Vector2f((800 / columns) * i + 45.f, (600 / rows / 2) * j + 60.f), randomTexture));
+		}
+	}
 }
 
 
