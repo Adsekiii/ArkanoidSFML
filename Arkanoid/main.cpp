@@ -5,9 +5,11 @@ int main() {
 	sf::VideoMode windowSize(800,600);
 	sf::String title = "Arcanoid";
 	sf::RenderWindow window(windowSize,title);
-	srand(time(NULL));
-	Paddle paddle(100, sf::Vector2f(400, 550), "./textures/Paddle.png");
+	srand(time(0));
 
+
+	Paddle paddle(100, sf::Vector2f(400, 550), "./textures/Paddle.png");
+	Ball ball(100, sf::Vector2f(400, 500), "./textures/Ball.png");
 	std::vector<Brick*> bricks;
 	placeBricks(8, 4, &bricks, "./textures/Brick");
 
@@ -27,13 +29,15 @@ int main() {
 		}
 		dt = clock.restart();
 		paddle.updatePaddle(dt.asSeconds());
+		ball.updateBall(dt.asSeconds());
 		//clearing the screen
 		window.clear();
 		//drawing items
-		for (int i = 0; i <= bricks.size() - 1; i++) {
+		for (int i = 0; i < bricks.size(); i++) {
 			window.draw(*(bricks.at(i)));
 		}
 		window.draw(paddle);
+		window.draw(ball);
 		//displaying items
 		window.display();
 

@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Paddle.h"
 #include "Brick.h"
+#include "Ball.h"
 #include <vector>
 #include <time.h>
 #include <random>
