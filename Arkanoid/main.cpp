@@ -30,6 +30,8 @@ int main() {
 		dt = clock.restart();
 		paddle.updatePaddle(dt.asSeconds());
 		ball.updateBall(dt.asSeconds());
+		//ball.enteredArea(paddle);
+		
 		//clearing the screen
 		window.clear();
 		//drawing items

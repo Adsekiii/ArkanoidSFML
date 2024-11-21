@@ -28,7 +28,6 @@ void Ball::updateBall(float dt) {
 	}
 	this->moveBall();
 	this->setObjectPosition(sf::Vector2f(this->getObjectPosition().x + (this->objectSpeed * this->objectVelocity.x * dt), this->getObjectPosition().y + (this->objectSpeed * this->objectVelocity.y * dt)));
-
 }
 
 void Ball::moveBall()

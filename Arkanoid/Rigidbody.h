@@ -2,6 +2,7 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/System.hpp"
 #include "SFML/Window.hpp"
+#include "Staticbody.h"
 #include <iostream>
 
 
@@ -12,6 +13,8 @@ public:
 	sf::Vector2f getObjectPosition();
 	void setObjectVelocity(sf::Vector2f);
 	sf::Vector2f getObjectVelocity();
+	//void enteredArea(Rigidbody);
+	//void enteredArea(Staticbody);
 protected:
 	float objectSpeed;
 	sf::Texture objectTexture;

@@ -16,3 +16,18 @@ sf::Vector2f Staticbody::getObjectPosition()
 void Staticbody::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	target.draw(this->objectSprite);
 }
+
+
+sf::Sprite Staticbody::getSprite() {
+	return this->objectSprite;
+}
+
+
+
+sf::Rect<float> Staticbody::getBounds() {
+	return this->objectBounds;
+}
+
+void Staticbody::setBounds(sf::Rect<float> bounds) {
+	this->objectBounds = bounds;
+}

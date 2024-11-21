@@ -9,6 +9,9 @@ public:
 	Staticbody();
 	~Staticbody();
 	void setObjectPosition(sf::Vector2f);
+	sf::Sprite getSprite();
+	sf::Rect<float> getBounds();
+	void setBounds(sf::Rect<float>);
 	sf::Vector2f getObjectPosition();
 protected:
 	sf::Rect<float> objectBounds;
