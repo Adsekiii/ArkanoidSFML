@@ -11,6 +11,6 @@ For example:
 
   /// and then it will look like:
 
-  this->object.X();  /// and that is elegant and 1000x readable
+  this->object.X();  /// and that is elegant and 1000x more readable
 ```
 I will come back to this repo and implement brick collision as I did with the same project but with tutorial that guided me through this exact part.
